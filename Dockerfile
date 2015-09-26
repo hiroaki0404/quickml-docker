@@ -11,6 +11,7 @@ RUN mkdir /var/run/quickml
 RUN chown list:list /var/run/quickml
 RUN sed -i s/127.0.0.1/0.0.0.0/ /etc/quickml/quickmlrc
 RUN sed -i 's/^.*:message_catalog.*$//' /etc/quickml/quickmlrc
+RUN sed -i 's/^.*:distribute_address.*$//' /etc/quickml/quickmlrc
 RUN sed -i 's/^.*# :/  :/' /etc/quickml/quickmlrc
 RUN sed -i 's/\(^.*:smtp_host =>\).*$/\1 "172.17.42.1",/' /etc/quickml/quickmlrc
 
